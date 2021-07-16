@@ -49,7 +49,7 @@ def test_sorting_name(client):
     soup = BeautifulSoup(resp.data, 'html.parser')
     tags = soup.find_all("td", {"class" : "petname"})
     actual = [x.text.strip() for x in tags]
-    ex.sort(reverse=True)
+    ex.sort(reverse=False)
     assert ex == actual
 
 def test_sorting_bought(client):
